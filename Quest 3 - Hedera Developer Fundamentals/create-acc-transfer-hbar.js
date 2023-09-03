@@ -27,7 +27,7 @@ const createAccTransferHbar = async () => {
   const newAccountPublicKey = newAccountPrivateKey.publicKey;
   const newAccount = await new AccountCreateTransaction()
     .setKey(newAccountPublicKey)
-    .setInitialBalance(Hbar.fromTinybars(1000)) // 1HBAR = 1million TINYBARS
+    .setInitialBalance(Hbar.fromTinybars(1000)) // 1HBAR = 100million TINYBARS
     .execute(client);
 
   // Part 4 - Get the new account's ID
