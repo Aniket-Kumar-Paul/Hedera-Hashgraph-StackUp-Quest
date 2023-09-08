@@ -1,0 +1,28 @@
+# Node.js dependencies
+node_modules/
+
+# Build artifacts
+dist/
+build/
+out/
+*.log
+
+# Environment variables and secrets
+.env
+.env.*
+
+# Debug logs
+logs/
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.iml
+
+# Compiled binary addons (optional)
+/build/Release
