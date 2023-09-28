@@ -1,0 +1,50 @@
+Hedera Hashgraph :-
+- PoS, aBFT hashgraph consensus mechanism
+- What is used to agree upon the order of messages in a network? - Median timestamp of nodes receiving the message
+- Each message has the following components - transactions, timestamp, (cryptographic) signature, a hash of the last message the node made (self-parent), and a hash of the last message the node received (other-parent)
+- Members of a Hashgraph network can calculate every other member’s votes by internally looking at each of their copies of the hashgraph and applying the "Virtual Voting" algorithm.
+- DAG (Directed Acyclic Graph)
+- Solidity
+- allows for the creation of auditable logs of immutable and timestamped events
+- The transaction fee for each API call on Hedera network services is based on: The processing and storage required
+- Swirlds, the creator of hashgraph, has a permanent seat and equal vote on the Hedera Governing Council 
+- Hashgraph relies on Gossip about Gossip and the Virtual Voting mechanism to bring consensus to the network
+- Gossip about gossip - gossiping about the graph of gossip of messages in the graph
+- Virtual voting - Divide rounds, Decide fame, find order
+- Hedera Network Services - 
+	1. Hedera Token Service (HTS)
+	2. Hedera Consensus Service (HCS)
+	3. Hedera Smart Contract Service (HSCS)
+- Benifits of Hedera's decentralized governance model - 
+	1. Codebase direction
+	2. Network stability (No-fork guarantee)
+	3. Decentralized nodes
+	4. Fair responsibility
+
+
+- Types of Nodes : 1. Consensus Nodes
+		   2. Mirror Nodes (Read Only, doesn't participate in consensus)
+- HBAR Token : Network security, Network protection (PoS, Weighted Voting)
+- Accounts core components :
+	1. Account ID - <shardNum>.<realmNum>.<accountNum(8Byte)> #(accountNum is not stored in consensus node state.)
+	2. Account Memo - brief note associated with an account in the ledger state
+	3. Account Nonce - increasing count of EthTxn types submitted by the account
+	4. Automatic token associations, 5. Balances, 6. Keys, 7. Receiver signature required
+	Additional... Staking, Staking info., Auto renewals & expiration
+- Transaction : Node acc., txn id(accountID@transactionValidStart), txn fee, valid duration(180s), memo, txn(type of request), signatures
+- Nested transactions (ID, record, receipts, fees): 
+	1. Parent txn ID :  payerAccountId@transactionValidStart
+	   Child txn ID  : payerAccountId@transactionValidStart/nonce(1,2...)
+- Scheduled txns : ID eg. - 0.0.1.2.3.4@1615422161.673238162?scheduled
+	|- schedule entity ID is a unique identifier for the schedule whereas the schedule transaction ID is the ID of the transaction that will be executed by the scheduled transaction
+- Queries & Confirmations (Receipts, Records, State proofs)
+- State(Mutable) VS History(Immutable)
+- Mainnet Nodes - contribute to consensus, persist state
+  Mirror Nodes - persist state and history of txns
+- Hashpack wallet
+
+
+- Hedera uses the Hyperledger Besu EVM
+- Gas(EVM ops, intrinsic gas costs, Hedera service txn gas fee) & Rent Fees(Automatically renewed contract and storage)
+- Reasons to use hedera SCS - solidity communtity, low fees, fast txn, carbon -ve, FAIR ORDERING(smart contracts are always processed in the order they are received, not based on how much gas you’re willing to pay or at the choice of a miner), Optionally upgradable
+
